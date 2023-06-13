@@ -7,10 +7,10 @@ const telefono = document.getElementById("telefono")
 const especialidad = document.getElementById("especialidad")
 const formularioRegistro = document.getElementById("registro-pacientes-form")
 // Se le da una funcion al boton submit del formulario
-formularioRegistro.addEventListener("submit", function(event){
-    event.preventDefault()
+formularioRegistro.addEventListener("submit", function (event) {
+    event.preventDefault();
     // Se crea el objeto medico para guardar los valores que ingresan en el formulario
-    const Paciente = {
+    const Paciente ={
         atributoPaciente: paciente.value,
         apellido: apellido.value,
         cedula: cedula.value,
@@ -20,7 +20,7 @@ formularioRegistro.addEventListener("submit", function(event){
     }
     let pacientes = []
     let localPacientes = localStorage.getItem("pacientes")
-    if (localPacientes){
+    if (localPacientes) {
         pacientes = JSON.parse(localPacientes)
     }
     pacientes.push(paciente)

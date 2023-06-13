@@ -1,22 +1,22 @@
 function mostrarPacientes() {
     let pacientes = []
-    let localpacientes = localStorage.getItem("pacientes")
-    if (localpacientes) {
-        pacientes = JSON.parse(localpacientes)
+    let localPacientes = localStorage.getItem("pacientes")
+    if (localPacientes) {
+        pacientes = JSON.parse(localPacientes)
     }
-    const tablapacientes = document.getElementById("tabla-pacientes")
-    const cuerpoTabla = tablapacientes.getElementsByTagName("tbody")[0]
+    const tablaPacientes = document.getElementById("tabla-pacientes")
+    const cuerpoTabla = tablaPacientes.getElementsByTagName("tbody")[0]
 
     pacientes.forEach(paciente => {
         let fila = cuerpoTabla.insertRow()
         const celdaNombrePaciente = fila.insertCell()
         celdaNombrePaciente.textContent= paciente.nombrePaciente
         const celdaApellido = fila.insertCell();
-        celdaApellido.textContent=paciente.nombreDuenio
+        celdaApellido.textContent=paciente.apellido
         const celdaCedulas = fila.insertCell();
         celdaCedulas.textContent=paciente.cedula
         const celdaEdades = fila.insertCell();
-        celdaEdades.textContent=paciente.edadPaciente
+        celdaEdades.textContent=paciente.edad
         const celdaTelefono = fila.insertCell();
         celdaTelefono.textContent=paciente.telefono
         const celdaEspecialidad = fila.insertCell();
